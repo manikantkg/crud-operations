@@ -23,8 +23,8 @@ func Router() {
 
 	handler := cors.Handler(newRoute)
 
-
 	newRoute.HandleFunc("/test", controller.TestingApi).Methods("GET")
+	newRoute.HandleFunc("/user", controller.User).Methods("GET")
 
 	http.ListenAndServe(":9090", handler)
 }
